@@ -9,6 +9,8 @@ Enable epel
 
 install rabbitmq-server
 
+systemctl start rabbitmq-server
+
 Enable my scl stack:
 
 https://copr.fedorainfracloud.org/coprs/pcreech17/pulp-scl-demo/
