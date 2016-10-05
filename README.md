@@ -37,7 +37,7 @@ Start a tmux session and split screens (AFTER enabling the scl and running bash)
 
 start the celery worker
 ====
-From root dir:
+From the code root dir:
 
 celery -A addtask.tasks worker --loglevel=info
 
