@@ -10,13 +10,13 @@ def index(request):
 
 def add(request, left=0, right=0):
     req = AddRequest()
-    req.left = left
-    req.right = right
+    req.left = int(left)
+    req.right = int(right)
     req.save()
     result = addtask.delay(req.left, req.right)
     while not result.ready():
        time.sleep(1)
     req.total = result.get(timeout=20)
     req.save()
-    output = "{} + {} = {}".format(req.left, req.right, req.total)
+    output = "{} + {} = {}\n".format(req.left, req.right, req.total)
     return HttpResponse(output)
